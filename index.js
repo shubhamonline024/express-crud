@@ -42,7 +42,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/blogs", (req, res) => {
-  return res.json(blogsDb);
+  const result = {
+    data: blogsDb,
+    message: `Fetched all blogs successfully`,
+  };
+  return res.json(result);
 });
 
 app.post("/add", (req, res) => {
